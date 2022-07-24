@@ -1,0 +1,568 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------- HEADER -------------- */
+
+.header {
+    background-color: #070A0A;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.headerImgLogo {
+    width: 200px;
+}
+
+.btnGroup {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 3px 10px;
+    color: white;
+    border: 2px solid transparent;
+    font-size: 16px;
+    background-color: transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    border-bottom: 2px solid #5A7285;
+}
+
+.bt_menu {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* -------------- MAIN CONTENT -------------- */
+
+.main-content {
+    flex: 1 0 auto;
+}
+
+.mainHeader {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 500px;
+    background: linear-gradient(rgba(0,0,0,.8), rgba(0, 0, 0, 0.637)), url("imgs/black-mirror.jpg");
+}
+
+.mainHeaderTitle {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.mainHeaderTitle > p {
+    color: white;
+    font-size: 50px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.664);
+    font-weight: bold;
+    text-align: center;
+}
+
+.mainHeaderDescription {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    line-height: 2rem;
+}
+
+.mainHeaderDescription > p {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+.mainHeaderDescription > .mainHeaderCredits {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+/* -------------- ABOUT -------------- */
+
+.about {
+    margin-top: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: gainsboro;
+}
+
+.about-container {
+    width: 70%;
+    margin-top: 30px;
+    margin: 0 auto;
+}
+
+.about > h1 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.about-img {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.about-img > img {
+    width: 45%;
+    height: auto;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text > p {
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.1em;
+    line-height: 2em;
+    margin-bottom: 20px;
+}
+
+.about-text-credits {
+    margin-top: 30px;
+}
+
+.about-text-credits > a {
+    color: #070A0A;
+    font-weight: bold;
+}
+
+/* -------------- EPSODIOS -------------- */
+
+.episodios {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: gainsboro;
+    margin-top: 100px;
+}
+
+.episodios > h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.eps-container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.eps-container > .eps-description {
+    width: 100%;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.1em;
+    line-height: 2em;
+    margin-bottom: 20px;
+}
+
+.eps-card {
+    width: 280px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.082);
+    border-radius: 10px;
+}
+
+.eps-cardImg {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.eps-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+}
+
+.eps-cardImg:hover > .eps-img {
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+.eps-title {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px;
+}
+
+/* -------------- MODAL -------------- */
+
+#modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    display: none;
+    z-index: 1;
+    transition: 0.8s;
+}
+
+#modal.show {
+    display: block;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+    background-color: rgba(0, 0, 0, 0.61);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 60%;
+    height: 100vh;
+    margin: 0 auto;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.308);
+}
+
+.modal-content > iframe {
+    width: 70%;
+}
+
+.modal-content > h1 {
+    width: 70%;
+    color: white;
+    text-align: center;
+}
+
+.modal-content > p {
+    color: white;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.1em;
+    width: 70%;
+}
+
+#bt_close {
+    color: white;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    top: 10px;
+    padding: 5px 10px;
+    font-size: 25px;
+    border: solid 1px white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#bt_close:hover {
+    background-color: rgba(0, 0, 0, 0.822);
+    border: solid 1px rgba(255, 0, 0, 0.651);
+}
+
+.modal_active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* -------------- VER SÉRIE NA NETFLIX -------------- */
+
+.btn-link {
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: gainsboro;
+}
+
+.btn-link-container {
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.btn-link > h1 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.btn-link-container > a {
+    width: 100%;
+}
+
+.btn-link-container > a > button {
+    background-color: #070A0A;
+    color: white;
+    width: 100%;
+    height: 60px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn-link-container > a > button:hover {
+    background-color: #070a0af3;
+}
+
+/* -------------- FOOTER -------------- */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #070A0A;
+    padding: 80px;
+}
+
+.footer > p {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer-social-logos {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-social-logos-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.8s;
+}
+
+.footer-social-logos-card:hover {
+    background-color: #070A0A;
+    color: white;
+}
+
+.footer-social-logos-card:hover > i {
+    color: white;
+}
+
+.footer-social-logos-card > i {
+    font-size: 20px;
+    color: #070A0A;
+    transition: 0.4s;
+}
+
+@media (max-width: 925px) {
+    .about > h1 {
+        font-size: 25px;
+    }
+
+    .btn-link-container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 870px) {
+    .headerImgLogo {
+        padding-bottom: 10px;
+    }
+    .mainHeader {
+        flex-direction: column;
+    }
+
+    .mainHeaderTitle {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .mainHeaderDescription {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .about-img {
+        flex-direction: column;
+    }
+
+    .about-img > img {
+        width: 100%;
+    }
+
+    .img1 {
+        display: none;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+
+    .episodios > h1 {
+        width: 70%;
+        margin: 30px auto;
+    }
+
+    .btn-link > h1 {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .headerImgLogo {
+        margin-top: 10px;
+    }
+
+    .about > h1 {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+    .eps-card {
+        width: 85%;
+    }
+
+
+}
+
+@media (max-width: 642px) {
+    .header {
+        justify-content: center;
+    }
+
+    .modal-content > iframe {
+        width: 100%;
+    }
+
+    .modal-content > p {
+        width: 100%;
+    }
+
+    .modal-content > h1 {
+        width: 100%;
+    }
+
+    .footer-social-logos-card:hover {
+        background-color: white;
+        color: #070A0A;
+    }
+    
+    .footer-social-logos-card:hover > i {
+        color: #070A0A;
+    }
+}
+
+@media(max-width: 600px) {
+    .btn-link > button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 460px) {
+    .about-container {
+        width: 80%;
+    }
+
+    .eps-container {
+        width: 80%;
+    }
+
+    .btn {
+        padding: 7px 12px;
+    }
+
+    .modal-content > h1 {
+        font-size: 20px;
+    }
+
+    .eps-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 370px) {
+    .header {
+        padding: 10px 30px;
+    }
+
+    .headerImgLogo {
+        width: 160px;
+    }
+
+    .about > h1 {
+        font-size: 20px;
+    }
+
+    .episodios {
+        padding: 50px 0px;
+    }
+}
+
+@media (max-width: 340px) {
+    .btn {
+        font-size: 12px;
+    }
+
+    .modal-content {
+        gap: 12px;
+    }
+}
